@@ -51,13 +51,7 @@ brew services start postgresql
 
 ### Windows
 
-You can install PostgreSQL on Windows using [Chocolatey's][url-chocolatey] `choco` command:
-
-```console
-choco install postgresql
-```
-
-See the [Chocolatey PostgreSQL package page][url-chocolatey-postgresql] for more details.
+Follow the instructions here to install PostgreSQL on Windows: <https://www.postgresqltutorial.com/install-postgresql/>
 
 Once installed, you have to add PostgreSQL's `bin` directory to your PATH environment variable. Search for *Edit system environment variable* to open *System Properties*. From there, click the *Environment Variables* button.
 
