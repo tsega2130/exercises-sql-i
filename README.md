@@ -58,8 +58,12 @@ Once installed, you have to add PostgreSQL's `bin` directory to your PATH enviro
 Under *User variables*, click the row labeled *Path* and then click the *Edit...* button. Click *New* and add the following directory to the PATH environment variable:
 
 ```text
-C:\Program Files\PostgreSQL\12\bin
+C:\Program Files\PostgreSQL\13\bin
 ```
+
+Note that the `13` here refers to the version of PostgreSQL that you installed. If you installed a different version, you'd use a different number. PostgreSQL v13 is the current version *as of writing this*!
+
+You can navigate to `C:\Program Files\PostgreSQL` and see what folders are present.
 
 ## Using PostgreSQL
 
@@ -68,7 +72,7 @@ C:\Program Files\PostgreSQL\12\bin
 Connect to database by running this in your terminal:
 
 ```console
-psql -h sql-exercises.20bits.com -U adjacent_student adjacent_sql_exercises
+psql -h sql-exercises.20bits.com -U student sql_exercises
 ```
 
 You will be prompted for a password. Ask your instructor for this information.
@@ -76,13 +80,13 @@ You will be prompted for a password. Ask your instructor for this information.
 Once inside, type the following at the PostgreSQL prompt
 
 ```console
-adjacent_sql_exercises> \dt
+sql_exercises> \dt
 ```
 
 to list all the tables in the database.  To see the schema for a specific table, e.g., the `invoices` table, you can use PostgreSQL's `\d` command:
 
 ```text
-adjacent_sql_exercises> \d invoices
+sql_exercises> \d invoices
 ```
 
 If you see a colon `:` at the bottom of the screen, that means there's more to see. You can scroll up and down using the arrow keys. You can exit the scrolling interface by pressing the `q` key.
