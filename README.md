@@ -9,6 +9,7 @@ We've set up our own PostgreSQL server that you'll be connecting to.
 ## Contents
 
 - [Contents](#contents)
+- [SQL And Relational Databases](#sql-and-relational-databases)
 - [Exercises](#exercises)
 - [Installing PostgreSQL](#installing-postgresql)
   - [Mac](#mac)
@@ -23,6 +24,16 @@ We've set up our own PostgreSQL server that you'll be connecting to.
 - [Key Idea: How SQL Queries Are Evaluated](#key-idea-how-sql-queries-are-evaluated)
 - [Key Idea: Normalization](#key-idea-normalization)
 - [Useful Resources](#useful-resources)
+
+## SQL And Relational Databases
+
+SQL stands for **S**tructured **Q**uery **L**anguage. It's a special-purpose language for interacting with relational databases (sometimes called SQL databases). Examples of relational databases include PostgreSQL, MySQL, SQLite, Microsoft SQL Server, and Oracle.
+
+Relational databases were developed in the 1970s as a standardized way of organizing information. Because every relational databases organizes information in a similar way, we can use a standard language (SQL) to query the data.
+
+Every relational database has its own "dialect" of SQL, but they all share a common core. There's a "standard" dialect called ANSI SQL, which PostgreSQL goes out of its way to respect.
+
+Keep this in mind when you're looking up resources. A tutorial for MySQL or Microsoft SWL Server can't be used directly in PostgreSQL, although the differences are often minor.
 
 ## Exercises
 
@@ -110,7 +121,15 @@ When you're ready to exit the PostgreSQL shell you can press `Ctrl+D` or run the
 
 ## The Database Tables
 
-Remember: relational databases are organized into tables.  Each table has a "schema", which dictates the fields (aka columns) that the data in the table can or must contain.  The data itself is stored as records (aka rows).
+Relational databases are organized into tables. Each table looks like a single page in a spreadsheet, with rows and columns, but rather than thinking of it as a big "grid", it's best to think of it as a list of rows. Each row is an entry in the database.
+
+Some key differences between a database and a spreadsheet:
+
+1. Every column (or field) has a name
+1. We can put constraints on the data in each row, so that only valid data can be inserted (e.g., only numbers, only text)
+1. The data doesn't exist in any particular order in the database. The data just "exists" and we use SQL queries to get different views into the data.
+
+A database can have many tables. The database "schema" is the structural description of the datbase. What tables are in the database? What fields does each table have? What constraints are there on the data that can be present in each row?
 
 Here are the tables, organized by high-level purpose.
 
