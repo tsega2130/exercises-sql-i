@@ -86,7 +86,7 @@ sql_exercises> \dt
 
 to list all the tables in the database.  To see the schema for a specific table, e.g., the `invoices` table, you can use PostgreSQL's `\d` command:
 
-```text
+```console
 sql_exercises> \d invoices
 ```
 
