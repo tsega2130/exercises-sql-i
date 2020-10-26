@@ -8,20 +8,21 @@ We've set up our own PostgreSQL server that you'll be connecting to.
 
 ## Contents
 
-- [Contents](#Contents)
-- [Exercises](#Exercises)
-- [Installing PostgreSQL](#Installing-PostgreSQL)
-  - [Mac](#Mac)
-  - [Windows](#Windows)
-- [Using PostgreSQL](#Using-PostgreSQL)
-  - [Connecting To PostgreSQL](#Connecting-To-PostgreSQL)
-  - [Exiting The PostgreSQL Shell](#Exiting-The-PostgreSQL-Shell)
-- [The Database Tables](#The-Database-Tables)
-  - [Information About The Products](#Information-About-The-Products)
-  - [Information About Customers and Their Orders](#Information-About-Customers-and-Their-Orders)
-  - [Information About The Company](#Information-About-The-Company)
-- [One Key Idea: Normalization](#One-Key-Idea-Normalization)
-- [Useful Resources](#Useful-Resources)
+- [Contents](#contents)
+- [Exercises](#exercises)
+- [Installing PostgreSQL](#installing-postgresql)
+  - [Mac](#mac)
+  - [Windows](#windows)
+- [Using PostgreSQL](#using-postgresql)
+  - [Connecting To PostgreSQL](#connecting-to-postgresql)
+  - [Exiting The PostgreSQL Shell](#exiting-the-postgresql-shell)
+- [The Database Tables](#the-database-tables)
+  - [Information About The Products](#information-about-the-products)
+  - [Information About Customers and Their Orders](#information-about-customers-and-their-orders)
+  - [Information About The Company](#information-about-the-company)
+- [Key Idea: How SQL Queries Are Evaluated](#key-idea-how-sql-queries-are-evaluated)
+- [Key Idea: Normalization](#key-idea-normalization)
+- [Useful Resources](#useful-resources)
 
 ## Exercises
 
@@ -133,7 +134,43 @@ Here are the tables, organized by high-level purpose.
 
 1. `employees` contains information about our company's employees.  This is mostly used to assign support representatives to customers.
 
-## One Key Idea: Normalization
+## Key Idea: How SQL Queries Are Evaluated
+
+Every SQL query consists of many clauses glued together. Some clauses are required, others are optional. Some can appear only once, others can appear multiple times.
+
+Each clause is designated by a SQL keyword. For example, this query has two clauses: a `SELECT` clause and a `FROM` clause.
+
+```sql
+SELECT * FROM albums;
+```
+
+Each clause can only appear in certain locations in a query. In general, the order of clauses as written goes like this:
+
+```text
+SELECT
+FROM and JOIN
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+LIMIT
+```
+
+You're not familiar with all these clauses (yet), but you will be soon enough.
+
+The order you should think about them is different than the order you write them, though. You should think about the clauses in a query in the following order:
+
+```text
+FROM + JOIN
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+LIMIT
+```
+
+## Key Idea: Normalization
 
 One of the key ideas in how relational databases like PostgreSQL and MySQL organize data is that we try to minimize redundancy by using references to other data rather than duplicating that data between different tables.
 
