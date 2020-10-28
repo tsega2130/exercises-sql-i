@@ -108,7 +108,7 @@ Don't be afraid to explore the data in the tables to get a better feeling for ho
 ```sql
 SELECT * FROM invoices LIMIT 5;
 ```
-
+\q
 That's what we mean by "explore."
 
 ### Exiting The PostgreSQL Shell
