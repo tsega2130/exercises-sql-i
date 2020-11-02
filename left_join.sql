@@ -85,3 +85,7 @@ FROM customers
 LEFT JOIN invoices
   ON (invoices.customer_id = customers.id)
 WHERE invoices.id IS NULL;
+
+--I understand the structure and the benefit of join but im having trouble creating queries of mine or approaching solving one 
+--if i didnt have a precdeing pattern that i was following here then i think it would be more difficult 
+--should my strategy be figuring out what data fields i need and using the order to structure them? 

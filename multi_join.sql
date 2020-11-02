@@ -39,10 +39,40 @@
 --
 
 -- What are the five highest grossing hip hop tracks?
+--What are the id_seq that each larger table has? Ex: albums_id_seq
+--need: genre, tracks, invoice_lines
+
+--missing FROM clause error when run even though its present 
+SELECT tracks.id, tracks.name, tracks.genre_id, SUM(unit_price) AS highest_grossing_HipHop_tracks
+FROM genres
+JOIN tracks 
+    ON(genres.id = tracks.genre.id)
+WHERE genre_id=17
+ORDER BY highest_grossing_HipHop_tracks DESC 
+LIMIT 5;
+
+
 
 -- What are the 3 least frequently-purchased tv shows?
+-- arent tv shows mixed in with music. what condition would i need to fill to filter those out
+-- *REMEMBER* Order to think about: FROM + JOIN, WHERE, GROUP BY, HAVING, SELECT, ORDER BY, LIMIT
+
 
 -- What are the 5 highest-grossing genres?
+--ahhh v frustrating 
+SELECT genres.id, genres.name, tracks.genre_id, SUM(unit_price) AS highest_grossing_HipHop_tracks
+FROM genres
+JOIN tracks
+    ON(genres.id = tracks.genre.id)
+FROM tracks
+JOIN invoice_lines  
+    ON(track)
+
+ORDER BY  DESC 
+LIMIT 5;
+
+
+
 
 -- Who are the 5 artists with the longest average track length?
 
